@@ -1,5 +1,3 @@
 # Erith
-A gente tentou
-Sla
-Slk
+A gente tentou, slk.
 Mt treta fazer rpg
