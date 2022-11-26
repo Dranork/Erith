@@ -1,0 +1,53 @@
+body {
+    background-image: url("Backgroundbrabo.gif");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+@font-face {
+    font-family: Dungeon;
+    src: url(Gothic\ Pixels.ttf);
+}
+
+h1 {
+    font-family: "Dungeon", sans-serif;
+    font-size: 128px;
+    font-weight: normal;
+    color: rgb(163, 0, 0);
+    text-align: center;
+    margin-bottom: -50px;
+    margin-top: 120px;
+    text-shadow: 10px 0px 3px black;
+}
+
+button {
+    font-family: "Dungeon", sans-serif;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: block;
+    margin: 20px auto;
+    border: none;
+    transition-duration: 0.4s;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+button:hover {
+    color: darkgray;
+}
+
+h3 {
+    font-family: "Dungeon", sans-serif;
+    font-weight: normal;
+    color: darkgray;
+    text-align: center;
+    margin-bottom: 80px;
+}
