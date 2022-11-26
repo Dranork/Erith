@@ -25,7 +25,7 @@ h1 {
     text-shadow: 10px 0px 3px black;
 }
 
-button {
+.button {
     font-family: "Dungeon", sans-serif;
     font-weight: normal;
     color: white;
@@ -40,7 +40,7 @@ button {
     background-color: rgba(240, 248, 255, 0);
 }
 
-button:hover {
+.button:hover {
     color: darkgray;
 }
 
@@ -50,4 +50,11 @@ h3 {
     color: darkgray;
     text-align: center;
     margin-bottom: 80px;
+}
+
+#audio {
+    background-image: url("../somDesligado.png");
+    background-size: 100px 130px;
+    height: 134px;  
+    width: 104px;
 }
