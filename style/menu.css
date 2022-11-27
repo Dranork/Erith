@@ -61,13 +61,54 @@ h3 {
 
 #dialogo {
     font-size: 32px;
-    color: white;
     text-align: center;
-    animation: color-change 1s infinite;
+    animation: aparecerTexto 3s;
+    color: white;
+    padding-top: 20%;
 }
 
-@keyframes color-change {
-    0% { color: red; }
-    50% { color: blue; }
-    100% { color: red; }
-  }
+@keyframes aparecerTexto {
+    0% { color: black; }
+    100% { color: white; }
+}
+
+@keyframes desaparecerTexto {
+    0% { color: white; }
+    100% { color: black; }
+}
+
+.Erith {
+    animation: aparecerTextoErith 9s;
+    font-size: 38px;
+}
+
+@keyframes aparecerTextoErith {
+    0% { color: black; }
+    33% { color: white; }
+    50% { color: darkred; }
+    66% { color: darkred; }
+    100% { color: black; }
+}
+
+#redencao {
+    animation: aparecerTextoRe 9s;
+}
+
+@keyframes aparecerTextoRe {
+    0% { color: black; }
+    33% { color: white; }
+    50% { color: rgb(248, 248, 44); }
+    66% { color: rgb(248, 248, 44); }
+    100% { color: black; }
+}
+
+.pecado {
+    animation: aparecerTextoPe 9s;
+}
+
+@keyframes aparecerTextoPe {
+    0% { color: black; }
+    33% { color: darkred; }
+    66% { color: darkred; }
+    100% { color: black; }
+}
