@@ -58,3 +58,16 @@ h3 {
     height: 134px;  
     width: 104px;
 }
+
+#dialogo {
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+  }
