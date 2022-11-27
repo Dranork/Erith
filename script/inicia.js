@@ -43,5 +43,11 @@ function inicio() {
     bodyStyle.backgroundImage = "none";
     bodyStyle.backgroundColor = "black";
     element.innerHTML = "";
+    var musica = "musica.mp3";
+    var audio = new Audio(musica);
+    audio.controls = false;
+    audio.setAttribute("id","audio");
+    document.body.appendChild(audio);
+    audio.play();
     setTimeout(dialogos(), 2000);
 };
