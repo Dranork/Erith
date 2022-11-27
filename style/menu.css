@@ -98,7 +98,7 @@ h3 {
     0% { color: black; }
     33% { color: white; }
     50% { color: rgb(248, 248, 44); }
-    66% { color: rgb(248, 248, 44); }
+    95% { color: rgb(248, 248, 44); }
     100% { color: black; }
 }
 
@@ -111,4 +111,20 @@ h3 {
     33% { color: darkred; }
     66% { color: darkred; }
     100% { color: black; }
+}
+
+#ultimaRedencao {
+    font-size: 32px;
+    text-align: center;
+    animation: aparecerTexto 3s;
+    color: white;
+    margin-top: 10%;
+}
+
+#pray {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 128px;
+    margin-top: 200px;
 }
