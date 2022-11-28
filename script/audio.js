@@ -1,6 +1,8 @@
 let audioPode = false;
-let audioOptions = true;
-let alturaSom = 100;
+let configSalva = { 
+    alturaSom : 100
+
+};
 let janelaAberta = false;
 
 function comecaAudio() {
@@ -43,4 +45,5 @@ function criarJanela() {
 
 function sobreNos() {
     let janela = criarJanela();
-}; 
+};
+
