@@ -1,10 +1,10 @@
 function inicio() {
-    var txt = ['Há muito tempo atrás...', 'Em uma pequena terra isolada, batizada de <div class="Erith">Erith<div> ','<div class="pecado">Suja de sangue, dor e ódio.<div>', '<div class="pecado">Manchada pelos pecados daqueles que à habitavam.<div>', 'Mesmo diante tanta desgraça,', 'Ainda havia esperança...', 'Ainda havia quem buscasse sua <div id="redencao">Redenção<div>','Você está pronto para entrar nessa jornada?'];
-    var nDialogo = 0;
+    let txt = ['Há muito tempo atrás...', 'Em uma pequena terra isolada, batizada de <div class="Erith">Erith<div> ','<div class="pecado">Suja de sangue, dor e ódio.<div>', '<div class="pecado">Manchada pelos pecados daqueles que à habitavam.<div>', 'Mesmo diante tanta desgraça,', 'Ainda havia esperança...', 'Ainda havia quem buscasse sua <div id="redencao">Redenção<div>','Você está pronto para entrar nessa jornada?'];
+    let nDialogo = 0;
 
     function dialogos() {
         if (txt.length - 1 != nDialogo) {
-            var falas = document.createElement("p");
+            let falas = document.createElement("p");
             falas.setAttribute("id", "dialogo");
             document.body.appendChild(falas);
             falas.innerHTML = txt[nDialogo];
@@ -20,14 +20,14 @@ function inicio() {
         }
         else {
             
-            var falas = document.createElement("p");
+            let falas = document.createElement("p");
             falas.setAttribute("id", "ultimaRedencao");
             document.body.appendChild(falas);
             falas.innerHTML = txt[txt.length - 1];
-            var vamos = document.createElement("a");
+            let vamos = document.createElement("a");
             document.body.appendChild(vamos);
             vamos.innerHTML = "Vamos!";
-            var orandinho = document.createElement("img");
+            let orandinho = document.createElement("img");
             orandinho.src = "style/Levantando.gif"
             orandinho.setAttribute("id", "pray");
             document.body.appendChild(orandinho);
@@ -41,13 +41,13 @@ function inicio() {
 
 
     document.getElementById("audio").remove();
-    var element = document.getElementById("htmlAlteravel");
-    var bodyStyle = document.getElementById("body").style;
+    let element = document.getElementById("htmlAlteravel");
+    let bodyStyle = document.getElementById("body").style;
     bodyStyle.backgroundImage = "none";
     bodyStyle.backgroundColor = "black";
     element.innerHTML = "";
-    var musica = "musica.mp3";
-    var audio = new Audio(musica);
+    let musica = "musica.mp3";
+    let audio = new Audio(musica);
     audio.controls = false;
     audio.setAttribute("id","audio");
     document.body.appendChild(audio);
