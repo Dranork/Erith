@@ -31,13 +31,11 @@ h1 {
     color: white;
     text-align: center;
     font-size: 36px;
-    margin-top: 30px;
-    margin-bottom: 30px;
     display: block;
-    margin: 20px auto;
     border: none;
     transition-duration: 0.4s;
     background-color: rgba(240, 248, 255, 0);
+    margin: 20px auto;
 }
 
 .button:hover {
@@ -144,3 +142,7 @@ a {
 a:hover {
     color: darkgray;
 }
+
+#janelinha {
+    
+} 
