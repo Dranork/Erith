@@ -24,6 +24,9 @@ function inicio() {
             falas.setAttribute("id", "ultimaRedencao");
             document.body.appendChild(falas);
             falas.innerHTML = txt[txt.length - 1];
+            var vamos = document.createElement("a");
+            document.body.appendChild(vamos);
+            vamos.innerHTML = "Vamos!";
             var orandinho = document.createElement("img");
             orandinho.src = "style/Levantando.gif"
             orandinho.setAttribute("id", "pray");

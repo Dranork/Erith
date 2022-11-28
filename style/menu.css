@@ -119,6 +119,8 @@ h3 {
     animation: aparecerTexto 3s;
     color: white;
     margin-top: 10%;
+    font-family: "Dungeon", sans-serif;
+    letter-spacing: 4px;
 }
 
 #pray {
@@ -126,5 +128,19 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     width: 128px;
-    margin-top: 200px;
+    margin-top: 150px;
+}
+
+a {
+    font-size: 32px;
+    display: block;
+    text-align: center;
+    animation: aparecerTexto 3s;
+    color: white;
+    font-family: "Dungeon", sans-serif;
+    margin-top: 10%;
+}
+
+a:hover {
+    color: darkgray;
 }
