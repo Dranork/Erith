@@ -1,5 +1,5 @@
 function inicio() {
-    let txt = ['Há muito tempo atrás...', 'Em uma pequena terra isolada, batizada de <div class="Erith">Erith<div> ','<div class="pecado">Suja de sangue, dor e ódio.<div>', '<div class="pecado">Manchada pelos pecados daqueles que à habitavam.<div>', 'Mesmo diante tanta desgraça,', 'Ainda havia esperança...', 'Ainda havia quem buscasse sua <div id="redencao">Redenção<div>','Você está pronto para entrar nessa jornada?'];
+    let txt = ['Há muito tempo atrás...', 'Em uma pequena terra isolada, batizada de <div class="Erith">Erith<div> ', '<div class="pecado">Suja de sangue, dor e ódio.<div>', '<div class="pecado">Manchada pelos pecados daqueles que à habitavam.<div>', 'Mesmo diante tanta desgraça,', 'Ainda havia esperança...', 'Ainda havia quem buscasse sua <div id="redencao">Redenção<div>', 'Você está pronto para entrar nessa jornada?'];
     let nDialogo = 0;
 
     function dialogos() {
@@ -8,18 +8,17 @@ function inicio() {
             falas.setAttribute("id", "dialogo");
             document.body.appendChild(falas);
             falas.innerHTML = txt[nDialogo];
-            setTimeout(function apagaFala() {     
+            setTimeout(function apagaFala() {
                 falas.style.animation = "desaparecerTexto 3s";
                 falas.style.color = "black";
                 nDialogo++;
-                setTimeout(function () {    
+                setTimeout(function() {
                     falas.remove();
                     dialogos();
                 }, 3000);
             }, 6000);
-        }
-        else {
-            
+        } else {
+
             let falas = document.createElement("p");
             falas.setAttribute("id", "ultimaRedencao");
             document.body.appendChild(falas);
@@ -27,6 +26,7 @@ function inicio() {
             let vamos = document.createElement("a");
             document.body.appendChild(vamos);
             vamos.innerHTML = "Vamos!";
+            vamos.href = "game.html";
             let orandinho = document.createElement("img");
             orandinho.src = "style/Levantando.gif"
             orandinho.setAttribute("id", "pray");
@@ -37,7 +37,7 @@ function inicio() {
         }
     };
 
-    
+
 
 
     document.getElementById("audio").remove();
@@ -49,7 +49,7 @@ function inicio() {
     let musica = "musica.mp3";
     let audio = new Audio(musica);
     audio.controls = false;
-    audio.setAttribute("id","audio");
+    audio.setAttribute("id", "audio");
     document.body.appendChild(audio);
     audio.play();
     setTimeout(dialogos(), 2000);
