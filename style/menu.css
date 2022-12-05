@@ -1,11 +1,12 @@
 body {
-    background-image: url("Backgroundbrabo.gif");
+    background-image: url("../Asset/Backgroundbrabo.gif");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
 }
 
-html, body {
+html,
+body {
     min-height: 100%;
 }
 
@@ -51,9 +52,9 @@ h3 {
 }
 
 #audio {
-    background-image: url("../somDesligado.png");
+    background-image: url("../Asset/somDesligado.png");
     background-size: 100px 130px;
-    height: 134px;  
+    height: 134px;
     width: 104px;
 }
 
@@ -66,13 +67,21 @@ h3 {
 }
 
 @keyframes aparecerTexto {
-    0% { color: black; }
-    100% { color: white; }
+    0% {
+        color: black;
+    }
+    100% {
+        color: white;
+    }
 }
 
 @keyframes desaparecerTexto {
-    0% { color: white; }
-    100% { color: black; }
+    0% {
+        color: white;
+    }
+    100% {
+        color: black;
+    }
 }
 
 .Erith {
@@ -81,11 +90,21 @@ h3 {
 }
 
 @keyframes aparecerTextoErith {
-    0% { color: black; }
-    33% { color: white; }
-    50% { color: darkred; }
-    66% { color: darkred; }
-    100% { color: black; }
+    0% {
+        color: black;
+    }
+    33% {
+        color: white;
+    }
+    50% {
+        color: darkred;
+    }
+    66% {
+        color: darkred;
+    }
+    100% {
+        color: black;
+    }
 }
 
 #redencao {
@@ -93,11 +112,21 @@ h3 {
 }
 
 @keyframes aparecerTextoRe {
-    0% { color: black; }
-    33% { color: white; }
-    50% { color: rgb(248, 248, 44); }
-    95% { color: rgb(248, 248, 44); }
-    100% { color: black; }
+    0% {
+        color: black;
+    }
+    33% {
+        color: white;
+    }
+    50% {
+        color: rgb(248, 248, 44);
+    }
+    95% {
+        color: rgb(248, 248, 44);
+    }
+    100% {
+        color: black;
+    }
 }
 
 .pecado {
@@ -105,10 +134,18 @@ h3 {
 }
 
 @keyframes aparecerTextoPe {
-    0% { color: black; }
-    33% { color: darkred; }
-    66% { color: darkred; }
-    100% { color: black; }
+    0% {
+        color: black;
+    }
+    33% {
+        color: darkred;
+    }
+    66% {
+        color: darkred;
+    }
+    100% {
+        color: black;
+    }
 }
 
 #ultimaRedencao {
@@ -143,6 +180,4 @@ a:hover {
     color: darkgray;
 }
 
-#janelinha {
-    
-} 
+#janelinha {}

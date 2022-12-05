@@ -28,11 +28,11 @@ function inicio() {
             vamos.innerHTML = "Vamos!";
             vamos.href = "game.html";
             let orandinho = document.createElement("img");
-            orandinho.src = "style/Levantando.gif"
+            orandinho.src = "Asset/Levantando.gif"
             orandinho.setAttribute("id", "pray");
             document.body.appendChild(orandinho);
             setTimeout(function() {
-                orandinho.src = "style/empe.gif"
+                orandinho.src = "Asset/empe.gif"
             }, 1500);
         }
     };
