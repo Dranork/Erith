@@ -2,7 +2,6 @@ let jogo = {
 
     jogoEl: document.querySelector("html"),
     mapaEl: document.querySelector("#mundo"),
-    scrollerEL: document.querySelector("#sideScroller"),
     width: 0,
     fixedWidth: 0,
     height: 0,
@@ -28,16 +27,16 @@ function setTamanho() {
     jogo.height = y;
     jogo.width = x;
     jogo.fixedWidth = x - y / 8;
-
     jogo.size = 1536 * ratio;
+    jogo.fixedSize = jogo.size - y / 8;
+
 
     style.innerHTML = `
         #mundo {
             margin: auto;
             height: ${y}px;
-            width: ${x}px;
-            margin-top: 0;
-            margin-bottom: 0;
+            width: ${jogo.size}px;
+            margin-right: 0px;
         }
 
         #sideScroller{
@@ -88,7 +87,7 @@ function teclado(e) {
             x = 1;
             break;
         case 'Space':
-            console.log("pos:" + player.x + " " + player.y);
+            console.log("pos:" + player.x + " ");
             break;
 
     }
@@ -134,11 +133,13 @@ function mover(x) {
 
         }
 
+        player.x += mov;
+
     } else {
 
         if (jogo.xScroll == 0) {
 
-            if (player.x + mov <= jogo.width / 2) {
+            if (player.x + mov <= jogo.fixedWidth / 2) {
 
                 if (player.x + mov > 0)
                     player.x += mov;
@@ -147,19 +148,22 @@ function mover(x) {
             } else {
 
                 jogo.xScroll += mov;
+                player.x += mov;
 
             }
 
         } else {
 
-            if (player.x + mov >= jogo.width / 2) {
+            if (player.x + mov >= jogo.fixedWidth / 2) {
 
-                if (player.x + mov < jogo.fixedWidth)
+                if (player.x + mov < jogo.fixedSize)
                     player.x += mov;
+                else player.x = jogo.fixedSize;
 
             } else {
 
                 jogo.xScroll += mov;
+                player.x += mov;
 
             }
 
@@ -169,10 +173,49 @@ function mover(x) {
 
 
     player.playerEl.style.left = `${player.x}px`;
-    jogo.mapaEl.style.backgroundPosition = `${-jogo.xScroll}px`
-    jogo.scrollerEL.style.left = `${-jogo.xScroll}px`
+    jogo.mapaEl.style.left = `${-jogo.xScroll}px`;
 
 }
 
 jogo.jogoEl.addEventListener('keypress', teclado);
 jogo.jogoEl.addEventListener('keyup', teclado);
+
+
+//falas
+
+let fala = document.querySelector('#dialogues');
+
+function escrever(dialogo) {
+    fala.textContent = dialogo; //aqui eu vou precisar de um vertor de caracteres
+    fala.hidden = false;
+}
+
+function fimDialogo() {
+    fala.textContent = "";
+    fala.hidden = true;
+}
+let inf = setInterval(() => {
+
+    dialogueCheck("debug");
+
+}, 10)
+
+
+let npc = {
+
+
+
+}
+
+function dialogueCheck(npcName) {
+
+    escrever("");
+
+    let npc = document.querySelector('.npc');
+    let npcX = npc.offsetLeft;
+
+    if (player.x <= (npcX + jogo.width / 20) && player.x >= (npcX - jogo.width / 20))
+        escrever("OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é alcool É apenas minha dose de calma diária, NÃO ESTOU BEBADO. Você É novo nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou Á dizer  ");
+    else fimDialogo();
+
+}

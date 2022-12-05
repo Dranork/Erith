@@ -29,11 +29,11 @@ body {
 .npc {
     position: absolute;
     height: 20%;
-    left: 800px;
+    left: 1500px;
     bottom: 300.5px;
 }
 
-p {
+#dialogues {
     margin-block-start: 0px;
     margin-block-end: 0px;
     position: absolute;
@@ -45,4 +45,5 @@ p {
     background-image: linear-gradient(rgb(35, 0, 82), black);
     border-radius: 5%;
     opacity: 70%;
+    z-index: 5;
 }
