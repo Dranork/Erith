@@ -28,7 +28,7 @@ function options() {
         let volume = document.createElement("p");
         volume.setAttribute("id","option");
         janela.appendChild(volume);
-        volume.innerHTML = "Volume da música = ";
+        volume.innerHTML = "Volume da música";
         let volumeSlide = document.createElement("input");
         volumeSlide.setAttribute("type","range");
         volumeSlide.setAttribute("value","100");
@@ -52,6 +52,11 @@ function criarJanela() {
     let janela = document.createElement("div");
     janela.setAttribute("id", "janelinha");
     document.getElementById("htmlAlteravel").appendChild(janela);
+    let fechar = document.createElement("button");
+    fechar.setAttribute("id","fechou");
+    fechar.innerHTML = "Fechar";
+    janela.appendChild(fechar);
+    fechar.addEventListener('click', apagaTudo);
     return janela;
 };
 
@@ -86,3 +91,8 @@ window.onload = function chuvinha() {
         navigator.geolocation.getCurrentPosition(success);
     }
 };
+
+function apagaTudo() {
+    document.querySelector('#janelinha').remove();
+    janelaAberta = false;
+}

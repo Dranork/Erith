@@ -144,8 +144,43 @@ a:hover {
 }
 
 #janelinha {
-    background-color: gray;
-    
+    background-color: rgba(61, 61, 61, 0.9);
+    position: absolute;
+    margin: auto;
+    left: 20%;
+    right: 20%;
+    top: 20%;
+    height: 50%;
+    border-radius: 30px;
+    display: flex;
+    align-content: space-between;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
+#option {
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: "Dungeon", sans-serif;
 
+}
+
+#aplicar {
+    height: 10%;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border-color: rgba(240, 248, 255, 0);
+}
+
+input {
+    margin-top: 20px;
+}
+
+#fechou {
+    height: 10%;
+    border-radius: 5px;
+    border-color: rgba(240, 248, 255, 0);
+    order: 999;
+}
