@@ -21,12 +21,13 @@ function setTamanho() {
 
     let style = document.createElement('style');
     let y = window.innerHeight;
+    let x = window.innerWidth;
 
     ratio = y / 288;
 
     jogo.height = y;
-    jogo.width = y * 4 / 3;
-    jogo.fixedWidth = jogo.width - y / 8;
+    jogo.width = x;
+    jogo.fixedWidth = x - y / 8;
 
     jogo.size = 1536 * ratio;
 
@@ -34,7 +35,7 @@ function setTamanho() {
         #mundo {
             margin: auto;
             height: ${y}px;
-            width: ${y*4/3}px;
+            width: ${x}px;
             margin-top: 0;
             margin-bottom: 0;
         }

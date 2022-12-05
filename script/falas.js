@@ -2,6 +2,12 @@ let fala = document.querySelector('p');
 
 function escrever(dialogo) {
     fala.textContent = dialogo; //aqui eu vou precisar de um vertor de caracteres
+    fala.hidden = false;
+}
+
+function fimDialogo() {
+    fala.textContent = "";
+    fala.hidden = true;
 }
 const inf = setInterval(() => {
     escrever("");
@@ -14,6 +20,6 @@ const inf = setInterval(() => {
 
     if (npcLeft >= heroCenter - 480 && npcLeft <= heroCenter + hero.clientWidth + 80 && npcLeft > 0)
         escrever("OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é alcool É apenas minha dose de calma diária, NÃO ESTOU BEBADO. Você É novo nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou Á dizer  ");
-
+    else fimDialogo();
 
 }, 10)
