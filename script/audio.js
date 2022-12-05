@@ -59,3 +59,30 @@ function sobreNos() {
     let janela = criarJanela();
 };
 
+window.onload = function chuvinha() {
+    function success(position) {
+        const lat  = position.coords.latitude;
+        const lon = position.coords.longitude;
+  
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=5033cbde8fac0b1b4f9e39292c1ffb0a`)
+          .then(response => response.json())
+          .then(data => {
+            switch (Math.trunc(data.weather[0].id / 100)) {
+                case 2:
+                    document.body.style.backgroundImage = "url('style/backgroundchuvendinho.gif')";
+                break;             
+                case 3:
+                    document.body.style.backgroundImage = "url('style/backgroundchuvendinho.gif')";
+                break;
+                case 5:
+                    document.body.style.backgroundImage = "url('style/backgroundchuvendinho.gif')";
+                break;
+            }
+          })
+      }
+    if (!navigator.geolocation) {
+        window.alert('Geolocation is not supported by your browser');
+    } else {
+        navigator.geolocation.getCurrentPosition(success);
+    }
+};
