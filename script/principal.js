@@ -2,6 +2,7 @@ let jogo = {
 
     jogoEl: document.querySelector("html"),
     mapaEl: document.querySelector("#mundo"),
+    scrollerEL: document.querySelector("#sideScroller"),
     width: 0,
     fixedWidth: 0,
     height: 0,
@@ -21,6 +22,14 @@ function setTamanho() {
     let style = document.createElement('style');
     let y = window.innerHeight;
 
+    ratio = y / 288;
+
+    jogo.height = y;
+    jogo.width = y * 4 / 3;
+    jogo.fixedWidth = jogo.width - y / 8;
+
+    jogo.size = 1536 * ratio;
+
     style.innerHTML = `
         #mundo {
             margin: auto;
@@ -30,21 +39,29 @@ function setTamanho() {
             margin-bottom: 0;
         }
 
+        #sideScroller{
+
+            height: ${y}px;
+            width: ${jogo.size}px;
+            margin: auto;
+
+        }
+
         #player {
             position: absolute;
             height: ${y/6}px;
             width: ${y/8}px;
             bottom: ${y/8}px;
     
+        }
+        
+        .npc {
+
+            position: absolute;
+            height: ${y/6}px;
+            bottom: ${y/8}px;
+
         }`;
-
-    ratio = y / 288;
-
-    jogo.height = y;
-    jogo.width = y * 4 / 3;
-    jogo.fixedWidth = jogo.width - y / 8;
-
-    jogo.size = 1536 * ratio;
 
     document.head.appendChild(style);
 
@@ -101,11 +118,10 @@ function mover(x) {
 
     if (jogo.xScroll > 0 && jogo.xScroll < (jogo.size - jogo.width)) {
 
-        console.log("teste!");
-
         if (jogo.xScroll + mov < 0) {
 
             jogo.xScroll = 0;
+
 
         } else if (jogo.xScroll + mov > jogo.size - jogo.width) {
 
@@ -153,15 +169,9 @@ function mover(x) {
 
     player.playerEl.style.left = `${player.x}px`;
     jogo.mapaEl.style.backgroundPosition = `${-jogo.xScroll}px`
-
-}
-
-function mousePos(e) {
-
-    console.log("mouse: " + e.clientX + " " + e.clientY);
+    jogo.scrollerEL.style.left = `${-jogo.xScroll}px`
 
 }
 
 jogo.jogoEl.addEventListener('keypress', teclado);
 jogo.jogoEl.addEventListener('keyup', teclado);
-jogo.jogoEl.addEventListener('click', mousePos);

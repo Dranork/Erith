@@ -11,12 +11,38 @@
     top: 0px;
 }
 
+#sideScroller {
+    position: relative;
+}
+
 html,
 body {
     margin: 0;
     min-height: 100%;
+    overflow: hidden;
 }
 
 body {
     background-color: black;
+}
+
+.npc {
+    position: absolute;
+    height: 20%;
+    left: 800px;
+    bottom: 300.5px;
+}
+
+p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    position: absolute;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 100px;
+    color: rgb(255, 187, 0);
+    background-image: linear-gradient(rgb(35, 0, 82), black);
+    border-radius: 5%;
+    opacity: 70%;
 }
