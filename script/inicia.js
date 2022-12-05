@@ -1,5 +1,5 @@
 function inicio() {
-    let txt = ['Há muito tempo atrás...', 'Em uma pequena terra isolada, batizada de <div class="Erith">Erith<div> ', '<div class="pecado">Suja de sangue, dor e ódio.<div>', '<div class="pecado">Manchada pelos pecados daqueles que à habitavam.<div>', 'Mesmo diante tanta desgraça,', 'Ainda havia esperança...', 'Ainda havia quem buscasse sua <div id="redencao">Redenção<div>', 'Você está pronto para entrar nessa jornada?'];
+    let txt = ['Há muito tempo atrás...', 'Em uma pequena terra isolada, batizada de <div class="Erith">Erith<div> ', '<div class="pecado">Suja de sangue, dor e ódio.<div>', '<div class="pecado">Manchada pelos pecados daqueles que lá habitavam.<div>', 'Mesmo diante de tanta desgraça,', 'Ainda havia esperança...', 'Ainda havia quem buscasse sua <div id="redencao">Redenção<div>', 'Você está pronto para entrar nessa jornada?'];
     let nDialogo = 0;
 
     function dialogos() {
@@ -52,5 +52,8 @@ function inicio() {
     audio.setAttribute("id", "audio");
     document.body.appendChild(audio);
     audio.play();
+    let config = localStorage.getItem('config');
+    let configSalva = JSON.parse(config);
+    audio.volume = configSalva.alturaSom / 100;
     setTimeout(dialogos(), 2000);
 };
