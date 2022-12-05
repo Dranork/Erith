@@ -29,7 +29,6 @@ body {
 .npc {
     position: absolute;
     height: 20%;
-    left: 1500px;
     bottom: 300.5px;
 }
 
@@ -46,4 +45,8 @@ body {
     border-radius: 5%;
     opacity: 70%;
     z-index: 5;
+}
+
+#npcDeTeste {
+    left: 20%;
 }

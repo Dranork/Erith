@@ -154,7 +154,7 @@ function mover(x) {
 
         } else {
 
-            if (player.x + mov >= jogo.fixedWidth / 2) {
+            if (player.x + mov - jogo.xScroll >= jogo.fixedWidth / 2) {
 
                 if (player.x + mov < jogo.fixedSize)
                     player.x += mov;
@@ -194,28 +194,34 @@ function fimDialogo() {
     fala.textContent = "";
     fala.hidden = true;
 }
-let inf = setInterval(() => {
-
-    dialogueCheck("debug");
-
-}, 10)
-
 
 let npc = {
 
-
+    npcEl: 0,
+    x: -100,
+    dialogo: "isso é um dialogo de teste! :D",
 
 }
 
-function dialogueCheck(npcName) {
+let npcTeste = npc;
+npcTeste.npcEl = document.querySelector(`#npcDeTeste`);
+npcTeste.x = npcTeste.offsetLeft;
+npcTeste.dialogo = "OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é alcool É apenas minha dose de calma diária, NÃO ESTOU BEBADO. Você É novo nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou Á dizer";
+
+function dialogueCheck(npc, dialogo) {
 
     escrever("");
 
-    let npc = document.querySelector('.npc');
     let npcX = npc.offsetLeft;
 
     if (player.x <= (npcX + jogo.width / 20) && player.x >= (npcX - jogo.width / 20))
-        escrever("OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é alcool É apenas minha dose de calma diária, NÃO ESTOU BEBADO. Você É novo nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou Á dizer  ");
+        escrever(dialogo);
     else fimDialogo();
 
 }
+
+let infNpc = setInterval(() => {
+
+    dialogueCheck(npcTeste.npcEl, npcTeste.dialogo);
+
+}, 10)
