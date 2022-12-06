@@ -204,7 +204,7 @@ a:hover {
 
 #aplicar {
     height: 10%;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-right: 20px;
     border-radius: 5px;
     border-color: rgba(240, 248, 255, 0);
@@ -216,7 +216,15 @@ input {
 
 #fechou {
     height: 10%;
-    border-radius: 5px;
-    border-color: rgba(240, 248, 255, 0);
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    display: block;
+    border: none;
+    transition-duration: 0.4s;
+    background-color: rgba(240, 248, 255, 0);
     order: 999;
+    margin-top: 5px;
+    margin-right: 5px;
 }

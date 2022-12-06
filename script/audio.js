@@ -6,7 +6,7 @@ let janelaAberta = false;
 
 function comecaAudio() {
     if (audioPode === false) {
-        let musica = "Asset/MusicMenu.mp3";
+        let musica = "MusicMenu.mp3";
         let audio = new Audio(musica);
         audio.controls = false;
         audio.setAttribute("id", "audio");
@@ -40,7 +40,7 @@ function criarJanela() {
     document.getElementById("htmlAlteravel").appendChild(janela);
     let fechar = document.createElement("button");
     fechar.setAttribute("id", "fechou");
-    fechar.innerHTML = "Fechar";
+    fechar.innerHTML = "X";
     janela.appendChild(fechar);
     fechar.addEventListener('click', apagaTudo);
     return janela;
