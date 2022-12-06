@@ -10,6 +10,10 @@ function comecaAudio() {
             let config = localStorage.getItem('config');
             configSalva = JSON.parse(config);
         }
+        else {
+            let config = JSON.stringify(configSalva);
+            localStorage.setItem('config', config);
+        }
         let musica = "MusicMenu.mp3";
         let audio = new Audio(musica);
         audio.controls = false;
