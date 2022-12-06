@@ -6,12 +6,17 @@ let janelaAberta = false;
 
 function comecaAudio() {
     if (audioPode === false) {
+        if (localStorage.getItem('config') != null) {
+            let config = localStorage.getItem('config');
+            configSalva = JSON.parse(config);
+        }
         let musica = "MusicMenu.mp3";
         let audio = new Audio(musica);
         audio.controls = false;
-        audio.setAttribute("id", "audio");
+        audio.setAttribute("id","audio");
         document.body.appendChild(audio);
         audio.play();
+        audio.volume = configSalva.alturaSom / 100
         audioPode = true;
     }
 };
