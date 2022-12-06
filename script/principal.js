@@ -219,9 +219,13 @@ function dialogueCheck(npc, dialogo) {
     else fimDialogo();
 
 }
+let npcTeste2 = npc;
+npcTeste2.npcEl = document.querySelector(`#npcDeTeste2`);
+npcTeste2.x = npcTeste2.offsetLeft;
+npcTeste2.dialogo = "Viajante novo? Tente não morrer por aqui, meu nome é {}, é melhor ir para casa antes que você morra... ou eu te mate";
 
 let infNpc = setInterval(() => {
-
+   
     dialogueCheck(npcTeste.npcEl, npcTeste.dialogo);
-
+     dialogueCheck(npcTeste2.npcEl, npcTeste2.dialogo);
 }, 10)
