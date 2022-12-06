@@ -12,6 +12,7 @@ let jogo = {
 let player = {
 
     playerEl: document.querySelector('#player'),
+    correndo: 0,
     x: 0
 
 }
@@ -76,12 +77,8 @@ function teclado(e) {
 
     switch (e.code) {
 
-        case 'KeyW':
-            break;
         case 'KeyA':
             x = -1;
-            break;
-        case 'KeyS':
             break;
         case 'KeyD':
             x = 1;
@@ -94,11 +91,29 @@ function teclado(e) {
 
     mover(x);
 
-    if (e.type == 'keyup') {
+    if (e.code == 'KeyA' || e.code == 'KeyD') {
 
+        if (player.correndo == 0) {
 
+            player.correndo = 1;
+            player.playerEl.src = "Asset/Correndinho.gif"
+
+        }
+
+    } else {
+
+        player.playerEl.src = "Asset/empe.gif";
 
     }
+
+    if (e.type == 'keyup') {
+
+        player.playerEl.src = "Asset/empe.gif";
+        player.correndo = 0;
+
+    }
+
+    console.log(player.correndo + " " + e.type);
 
 }
 
@@ -195,37 +210,43 @@ function fimDialogo() {
     fala.hidden = true;
 }
 
-let npc = {
-
-    npcEl: 0,
-    x: -100,
-    dialogo: "isso é um dialogo de teste! :D",
-
-}
-
-let npcTeste = npc;
-npcTeste.npcEl = document.querySelector(`#npcDeTeste`);
-npcTeste.x = npcTeste.offsetLeft;
-npcTeste.dialogo = "OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é alcool É apenas minha dose de calma diária, NÃO ESTOU BEBADO. Você É novo nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou Á dizer";
-
 function dialogueCheck(npc, dialogo) {
-
-    escrever("");
 
     let npcX = npc.offsetLeft;
 
-    if (player.x <= (npcX + jogo.width / 20) && player.x >= (npcX - jogo.width / 20))
+    if (player.x <= (npcX + jogo.width / 20) && player.x >= (npcX - jogo.width / 20)) {
         escrever(dialogo);
-    else fimDialogo();
+        return 1;
+    } else return 0;
 
 }
-let npcTeste2 = npc;
-npcTeste2.npcEl = document.querySelector(`#npcDeTeste2`);
+
+let npcTeste = {
+
+    npcEl: document.querySelector(`#npcDeTeste`),
+    x: 0,
+    dialogo: "OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é alcool É apenas minha dose de calma diária, NÃO ESTOU BEBADO. Você É novo nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou Á dizer"
+
+}
+
+npcTeste.x = npcTeste.offsetLeft;
+
+let npcTeste2 = {
+
+    npcEl: document.querySelector(`#npcDeTeste2`),
+    x: 0,
+    dialogo: "Viajante novo? Tente não morrer por aqui, meu nome é {}, é melhor ir para casa antes que você morra... ou eu te mate"
+}
+
 npcTeste2.x = npcTeste2.offsetLeft;
-npcTeste2.dialogo = "Viajante novo? Tente não morrer por aqui, meu nome é {}, é melhor ir para casa antes que você morra... ou eu te mate";
 
 let infNpc = setInterval(() => {
-   
-    dialogueCheck(npcTeste.npcEl, npcTeste.dialogo);
-     dialogueCheck(npcTeste2.npcEl, npcTeste2.dialogo);
+
+    let check = 0;
+
+    check += dialogueCheck(npcTeste.npcEl, npcTeste.dialogo);
+    check += dialogueCheck(npcTeste2.npcEl, npcTeste2.dialogo);
+
+    if (!check) fimDialogo();
+
 }, 10)
