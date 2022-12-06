@@ -56,6 +56,9 @@ function criarJanela() {
 
 function sobreNos() {
     let janela = criarJanela();
+    function adicionarTexto() {
+        
+    };
 };
 
 
