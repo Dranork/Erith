@@ -203,10 +203,6 @@ let npc = {
 
 }
 
-let npcTeste = npc;
-npcTeste.npcEl = document.querySelector(`#npcDeTeste`);
-npcTeste.x = npcTeste.offsetLeft;
-npcTeste.dialogo = "OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é alcool É apenas minha dose de calma diária, NÃO ESTOU BEBADO. Você É novo nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou Á dizer";
 
 function dialogueCheck(npc, dialogo) {
 
@@ -222,11 +218,11 @@ function dialogueCheck(npc, dialogo) {
 let npcTeste2 = npc;
 npcTeste2.npcEl = document.querySelector(`#npcDeTeste2`);
 npcTeste2.x = npcTeste2.offsetLeft;
-npcTeste2.dialogo = "Inferior... venho aguardando a dias sua chegada, a chegada de quem ousa sequer desejar me destruir, eu, o poderoso Nebasu. você ousa destruir quem esteve punindo aqueles que devem ser punidos, dando fome aqueles que são abençoados pela gula.";
+npcTeste2.dialogo = "Inferior... venho aguardando a dias sua chegada, a chegada de quem ousa sequer desejar me destruir, eu, o poderoso Nebasu. você ousa destruir quem esteve punindo aqueles que devem ser punidos, dando fome aqueles que são abençoados pela gula, matando aqueles que matam, fazendo sofrer aqueles que fazem sofrer. Heroi, sua justiça nunca foi justiça, você apenas estava alimentando seu ego, caso contrário, prove sua verdadeira bondade, se sacrificando por aqueles que pecam, seja o verdadeiro SALVADOR e aceite o fardo desse título ao passar pela porta.";
 
 let infNpc = setInterval(() => {
    
-    dialogueCheck(npcTeste.npcEl, npcTeste.dialogo);
+    
     dialogueCheck(npcTeste2.npcEl, npcTeste2.dialogo);
 }, 10)
 
