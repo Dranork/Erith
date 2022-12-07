@@ -226,3 +226,12 @@ let infNpc = setInterval(() => {
     dialogueCheck(npcTeste2.npcEl, npcTeste2.dialogo);
 }, 10)
 
+var NewUrl= [""];
+let transfWeb = setInterval(() => {
+
+    if ((player.x+314) >= jogo.size ) 
+        window.location.replace(NewUrl);
+
+    
+
+}, 10)
