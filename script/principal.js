@@ -220,12 +220,22 @@ function dialogueCheck(npc, dialogo) {
     } else return 0;
 
 }
+var NewUrl= [""];
+let transfWeb = setInterval(() => {
+
+    if ((player.x+314) >= jogo.size ) 
+        window.location.replace(NewUrl);
+
+    
+
+}, 10)
+
 
 let npcTeste = {
 
     npcEl: document.querySelector(`#npcDeTeste`),
     x: 0,
-    dialogo: "OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é alcool É apenas minha dose de calma diária, NÃO ESTOU BEBADO. Você É novo nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou Á dizer"
+    dialogo: "OhoHo, Bem VinDo AveNTuReIRO... nÃo SE pREoCUPe, Isso não é álcool. É apenas minha dose de calma diária, NÃO ESTOU BÊBADO. Você É novo na vida e nessa cidade amaldiçoada dos infernos HAHAHAHA logo entenderá oque estou falando"
 
 }
 
@@ -235,17 +245,47 @@ let npcTeste2 = {
 
     npcEl: document.querySelector(`#npcDeTeste2`),
     x: 0,
-    dialogo: "Viajante novo? Tente não morrer por aqui, meu nome é {}, é melhor ir para casa antes que você morra... ou eu te mate"
+    dialogo: "Viajante novo? Tente não morrer por aqui, meu nome é Polko, é melhor ir para casa antes que você morra... ou eu te mate"
 }
 
 npcTeste2.x = npcTeste2.offsetLeft;
 
+let npcTeste3 = {
+
+    npcEl: document.querySelector(`#npcDeTeste3`),
+    x: 0,
+    dialogo: "OH, eu sou o padre da cidade, visitante, faz tempo que não vejo caras novas por aqui filho, afinal, todos passam fome nessa cidade... não seria inesperado se descobrissem que ...hehe... esqueça, tenha um bom dia."
+}
+
+npcTeste3.x = npcTeste3.offsetLeft;
+
+let npcTeste4 = {
+
+    npcEl: document.querySelector(`#npcDeTeste4`),
+    x: 0,
+    dialogo: "Vo.. você veio matar o demonio!?!?"
+}
+
+npcTeste4.x = npcTeste4.offsetLeft;
+
+let npcTeste5 = {
+
+    npcEl: document.querySelector(`#npcDeTeste5`),
+    x: 0,
+    dialogo: "Ah, ora ora, você ... percebeu que já estou mais sóbrio?! hehehe... oque você disse? você quer saber mais sobre essa cidade? Bom, você entenderá quando o padre abrir a boca... não me impressionaria se você estivesse temperado quando ele fizer isso. Mas se você quer mesmo saber, busque por aqueles cultistas do submundo, mas tome cuidado onde se mete."
+}
+
+npcTeste5.x = npcTeste5.offsetLeft;
 let infNpc = setInterval(() => {
 
     let check = 0;
 
     check += dialogueCheck(npcTeste.npcEl, npcTeste.dialogo);
     check += dialogueCheck(npcTeste2.npcEl, npcTeste2.dialogo);
+    check += dialogueCheck(npcTeste3.npcEl, npcTeste3.dialogo);
+    check += dialogueCheck(npcTeste4.npcEl, npcTeste4.dialogo);
+    check += dialogueCheck(npcTeste5.npcEl, npcTeste5.dialogo);
+
 
     if (!check) fimDialogo();
 
