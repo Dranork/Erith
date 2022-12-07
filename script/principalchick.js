@@ -221,18 +221,6 @@ function dialogueCheck(npc, dialogo) {
 
 }
 
-
-
-let npcTeste = {
-
-    npcEl: document.querySelector(`#npcDeTeste`),
-    x: 0,
-    dialogo: "O sácrificio foi feito..."
-
-}
-
-npcTeste.x = npcTeste.offsetLeft;
-
 let npcTeste2 = {
 
     npcEl: document.querySelector(`#npcDeTeste2`),
@@ -272,7 +260,6 @@ let infNpc = setInterval(() => {
 
     let check = 0;
 
-    check += dialogueCheck(npcTeste.npcEl, npcTeste.dialogo);
     check += dialogueCheck(npcTeste2.npcEl, npcTeste2.dialogo);
     check += dialogueCheck(npcTeste3.npcEl, npcTeste3.dialogo);
     check += dialogueCheck(npcTeste4.npcEl, npcTeste4.dialogo);
@@ -280,5 +267,16 @@ let infNpc = setInterval(() => {
 
 
     if (!check) fimDialogo();
+
+}, 10)
+
+
+let NewUrl = window.location.href.replace("gamechik", "index");;
+
+
+let transfWeb = setInterval(() => {
+
+    if ((player.x + 314) >= jogo.size)
+        window.location.replace(NewUrl);
 
 }, 10)

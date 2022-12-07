@@ -12,11 +12,11 @@ function inicio() {
                 falas.style.animation = "desaparecerTexto 3s";
                 falas.style.color = "black";
                 nDialogo++;
-                setTimeout(function () {
+                setTimeout(function() {
                     falas.remove();
                     dialogos();
-                }, 3000);
-            }, 6000);
+                }, 300);
+            }, 600);
         } else {
 
             let falas = document.createElement("p");
@@ -31,7 +31,7 @@ function inicio() {
             orandinho.src = "Asset/Levantando.gif"
             orandinho.setAttribute("id", "pray");
             document.body.appendChild(orandinho);
-            setTimeout(function () {
+            setTimeout(function() {
                 orandinho.src = "Asset/empe.gif"
             }, 1500);
         }

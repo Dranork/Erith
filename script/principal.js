@@ -220,13 +220,13 @@ function dialogueCheck(npc, dialogo) {
     } else return 0;
 
 }
-var NewUrl= [""];
+let NewUrl = window.location.href.replace("game", "gamefase2");;
+
+
 let transfWeb = setInterval(() => {
 
-    if ((player.x+314) >= jogo.size ) 
+    if ((player.x + 314) >= jogo.size)
         window.location.replace(NewUrl);
-
-    
 
 }, 10)
 
