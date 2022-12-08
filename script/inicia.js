@@ -15,8 +15,8 @@ function inicio() {
                 setTimeout(function() {
                     falas.remove();
                     dialogos();
-                }, 300);
-            }, 600);
+                }, 3000);
+            }, 6000);
         } else {
 
             let falas = document.createElement("p");
